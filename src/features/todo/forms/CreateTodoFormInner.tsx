@@ -8,19 +8,21 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
+import type { CreateTodoFormSchema } from "../types";
 
 type CreateTodoFormInnerProps = {
   formId: string;
-  onSubmit: (values: string) => void;
+  onSubmit: (values: CreateTodoFormSchema) => void;
 };
 
 export const CreateTodoFormInner = ({
   formId,
   onSubmit,
 }: CreateTodoFormInnerProps) => {
-  const form = useFormContext();
+  const form = useFormContext<CreateTodoFormSchema>();
+
   return (
-    <form id={formId}>
+    <form id={formId} onSubmit={form.handleSubmit(onSubmit)}>
       <FormField
         control={form.control}
         name="text"

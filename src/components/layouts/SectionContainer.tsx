@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { forwardRef } from "react";
 import { Container } from "./Container";
-import { GridPattern } from "../magicui/grid-pattern";
+import { GridPattern } from "../ui/grid-pattern";
 
 type SectionContainerProps = {
   padded?: boolean;

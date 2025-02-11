@@ -10,7 +10,7 @@ type RenderElementsProps<T> = {
   /** Render function for each item */
   render: (item: T, index: number) => React.ReactElement;
   /** Optional key extractor function */
-  keyExtractor?: (item: T, index: number) => string | number;
+  keyExtractor: (item: T, index: number) => string | number;
   /** Optional fallback element when array is empty */
   fallback?: React.ReactNode;
 };
